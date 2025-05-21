@@ -190,7 +190,9 @@ class Game {
     for (let row = 0; row < 4; row++) {
       for (let col = 0; col < 4; col++) {
         if (this.board[row][col] === 0) {
-          emptyCells.push({ row, col });
+          emptyCells.push({
+            row, col,
+          });
         }
       }
     }
@@ -213,8 +215,8 @@ class Game {
         const current = this.board[i][j];
 
         if (
-          (i > 0 && current === this.board[i - 1][j]) ||
-          (j > 0 && current === this.board[i][j - 1])
+          (i > 0 && current === this.board[i - 1][j])
+          || (j > 0 && current === this.board[i][j - 1])
         ) {
           return;
         }
